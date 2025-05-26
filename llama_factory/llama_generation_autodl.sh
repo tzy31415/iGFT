@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 llamafactory-cli generation examples/iGFT/Generation/llama2_generation.yaml
