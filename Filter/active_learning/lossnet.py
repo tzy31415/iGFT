@@ -97,7 +97,7 @@ class LossNet(nn.Module):
         return features
     
 class ColBERT(nn.Module): # bert，colbert
-    def __init__(self, model_save_path = '/root/autodl-tmp/sptar/bert/bert-base-uncased'):
+    def __init__(self, model_save_path = 'bert-base-uncased'):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.tokenizer = AutoTokenizer.from_pretrained(model_save_path)
@@ -121,7 +121,7 @@ class ColBERT(nn.Module): # bert，colbert
     
     
     
-def train_main(pseudo_query_file, corpus_file,lossnet_path = 'lossnet', model_save_path = '/root/autodl-tmp/sptar/bert/bert-base-uncased', batch_size=4, epochs=10):
+def train_main(pseudo_query_file, corpus_file,lossnet_path = 'lossnet', model_save_path = 'bert-base-uncased', batch_size=4, epochs=10):
     colbert = ColBERT(model_save_path)
     lossnet = LossNet()  # Assuming BERT base model with 768 hidden size
     optimizer = torch.optim.AdamW(lossnet.parameters(), lr=1e-5)
@@ -156,7 +156,7 @@ def write_json(data, json_file):
     with open(json_file, 'w') as f:
         json.dump(data, f, indent=4)     
 
-def test_main(pseudo_query_file, corpus_file, to_json_file, lossnet_path = 'lossnet', model_save_path = '/root/autodl-tmp/sptar/bert/bert-base-uncased', batch_size=1):
+def test_main(pseudo_query_file, corpus_file, to_json_file, lossnet_path = 'lossnet', model_save_path = 'bert-base-uncased', batch_size=1):
     colbert = ColBERT(model_save_path)
     lossnet = LossNet()
     lossnet.load_state_dict(torch.load(f'{lossnet_path}.pt'))

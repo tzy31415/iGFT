@@ -18,7 +18,7 @@ from tqdm import tqdm
 import random
 
 class DRPScore():
-    def __init__(self,model_save_path = '/root/autodl-tmp/sptar/bert/bert-base-uncased') -> None:
+    def __init__(self,model_save_path = 'bert-base-uncased') -> None:
         self.model = DRES(models.SentenceBERT(model_save_path), batch_size=256, corpus_chunk_size=100000)
         self.retriever = EvaluateRetrieval(self.model, k_values=[10], score_function="cos_sim")
         
@@ -36,7 +36,7 @@ class DRPScore():
             return 0
 
 class ColBERT(): # bert，colbert
-    def __init__(self, model_save_path = '/root/autodl-tmp/sptar/bert/bert-base-uncased'):
+    def __init__(self, model_save_path = 'bert-base-uncased'):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.tokenizer = AutoTokenizer.from_pretrained(model_save_path)
         self.model = AutoModel.from_pretrained(model_save_path).to(self.device)

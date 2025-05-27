@@ -8,7 +8,7 @@ if __name__ == '__main__':
     parser.add_argument("-train",type=str, default="True",help="train lossnet or not")
 
     parser.add_argument('-tofile', type=str, help='The JSON file to write')
-    parser.add_argument('-base_retriever_path', type=str, default='/root/autodl-tmp/sptar/bert/bert-base-uncased', help='The base retriever model')
+    parser.add_argument('-base_retriever_path', type=str, default='bert-base-uncased', help='The base retriever model')
     parser.add_argument('-lossnet_path', type=str, default="lossnet", help='The lossnet model name')
 
     args = parser.parse_args()

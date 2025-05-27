@@ -6,7 +6,7 @@ from colbert.modeling.tokenization.utils import _split_into_batches, _sort_by_le
 
 class DocTokenizer():
     def __init__(self, doc_maxlen):
-        self.tok = BertTokenizerFast.from_pretrained('/root/autodl-tmp/sptar/bert/bert-base-uncased')
+        self.tok = BertTokenizerFast.from_pretrained('bert-base-uncased')
         self.doc_maxlen = doc_maxlen
 
         self.D_marker_token, self.D_marker_token_id = '[D]', self.tok.convert_tokens_to_ids('[unused1]')

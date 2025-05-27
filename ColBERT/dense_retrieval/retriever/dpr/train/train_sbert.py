@@ -46,7 +46,7 @@ parser.add_argument('--product', required=False, default="cosine", type=str)
 parser.add_argument('--exp_name', required=False, default="no_aug", type=str)
 args = parser.parse_args()
 #### Provide model save path
-model_name = "/root/autodl-tmp/sptar/bert/bert-base-uncased" 
+model_name = "bert-base-uncased" 
 model_save_path = os.path.join(pathlib.Path(__file__).parent.absolute(), "output", args.exp_name, str(args.train_num), "{}-v1-{}".format(model_name, args.dataset_name))
 os.makedirs(model_save_path, exist_ok=True)
 #### Just some code to print debug information to stdout

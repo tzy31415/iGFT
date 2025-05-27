@@ -56,7 +56,7 @@ parser.add_argument('--exp_name', required=False, default="no_aug", type=str)
 parser.add_argument('--topk', required=False, default=100, type=int)
 args = parser.parse_args()
 #### Provide model save path
-model_name = "/root/autodl-tmp/sptar/bert/bert-base-uncased" 
+model_name = "bert-base-uncased" 
 log_path = os.path.join(pathlib.Path(__file__).parent.absolute(), "output", args.exp_name, str(args.train_num), f"top_{args.topk}", "{}-{}-{}".format(model_name, args.dpr_v, args.dataset_name))
 os.makedirs(log_path, exist_ok=True)
 #### Just some code to print debug information to stdout
