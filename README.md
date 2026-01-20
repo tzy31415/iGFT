@@ -176,3 +176,26 @@ python utils/sample_init_data.py -dataset dataset_name -num -1
 # Acknowledgments
 
 The code for the large language model fine-tuning and reinforcement learning in this work is based on the [llama-factory](https://github.com/hiyouga/LLaMA-Factory.git) repository, while the dense retrieval part is based on the [SPTAR](https://github.com/zhiyuanpeng/SPTAR.git) repository. Thanks for their wonderful works.
+
+# Citation
+
+if you find this repo is helpful, please cite
+
+```
+@inproceedings{tongigft,
+author = {Tong, Zhenyu and Qin, Chuan and Fang, Chuyu and Yao, Kaichun and Chen, Xi and Zhang, Jingshuai and Zhu, Chen and Zhu, Hengshu},
+title = {From Missteps to Mastery: Enhancing Low-Resource Dense Retrieval through Adaptive Query Generation},
+year = {2025},
+isbn = {9798400712456},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3690624.3709225},
+doi = {10.1145/3690624.3709225},
+booktitle = {Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1},
+pages = {1373–1384},
+numpages = {12},
+keywords = {dense retrieval, large language model, query generation},
+location = {Toronto ON, Canada},
+series = {KDD '25}
+}
+```
